@@ -47,6 +47,6 @@ done < "$output_dir/subdomains/live.txt"
 
 # OSINT - theHarvester
 echo "[+] Running theHarvester for OSINT..."
-theHarvester -d $domain -b google,bing -f "$output_dir/osint/theHarvester.html"
+theHarvester -d $domain -b bing,duckduckgo -f "$output_dir/osint/theHarvester.html"
 
 echo "✅ Recon Completed. All results saved to $output_dir/"
