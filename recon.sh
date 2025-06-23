@@ -34,6 +34,7 @@ echo "[+] Probing live domains..."
 httpx -silent -l "$output_dir/subdomains/all.txt" > "$output_dir/subdomains/live.txt"
 
 # Nmap Scan
+echo "[+] Preparing targets for Nmap..."
 cat "$output_dir/subdomains/live.txt" | sed -E 's#https?://##' | cut -d '/' -f1 | sort -u > "$output_dir/nmap/targets.txt"
 echo "[+] Running Nmap..."
 nmap -iL "$output_dir/nmap/targets.txt" -sS -sV -T4 -Pn -oN "$output_dir/nmap/nmap.txt"
